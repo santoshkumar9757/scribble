@@ -1,7 +1,10 @@
-package org.santosh.scribble.designpattern.creational.FactoryPattern;
+package org.santosh.scribble.designpattern.creational.factorypattern;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class PortFactory {
     static Map<String, Port> portMap = new HashMap<>();
@@ -31,6 +34,9 @@ public class PortFactory {
         Port port = new PortFactory().getPortType(portType);
         port.portType();
         port.portName();
-        Port.display();
+        //Port.display();
+
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime);
     }
 }

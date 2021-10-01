@@ -37,10 +37,10 @@ public class CollectionSample {
         this.lname = lname;
     }
 
-    @Override
+  /*  @Override
     public int hashCode() {
         return 13;
-    }
+    }*/
 
     public static void main(String[] args) {
         CollectionSample c1 = new CollectionSample("firstName1", "lastName1");
@@ -87,5 +87,20 @@ public class CollectionSample {
         set2.add(cs1);
         System.out.println("HashSet->" + set2.size());
 
+        Map<CollectionSample, String> map1 = new HashMap<>();
+        map1.put(cs1, "1st Object");
+        map1.put(cs2, "1st Object");
+        System.out.println("HashMap size ->"+ map1.size());
+
     }
+
+  /*  @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CollectionSample that = (CollectionSample) o;
+        return fname.equals(that.fname) &&
+                lname.equals(that.lname) &&
+                number == that.number;
+    }*/
 }

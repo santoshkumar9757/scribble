@@ -1,4 +1,4 @@
-package org.santosh.scribble.designpattern.creational.FactoryPattern;
+package org.santosh.scribble.designpattern.creational.factorypattern;
 
 public class LANPort implements  Port{
 

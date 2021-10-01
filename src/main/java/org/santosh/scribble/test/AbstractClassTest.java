@@ -1,5 +1,4 @@
-package org.santosh.scribble.test;/*
-package test;
+package org.santosh.scribble.test;
 
 abstract class Program {
     private void disp1() {
@@ -22,9 +21,21 @@ public class AbstractClassTest extends Program{
         System.out.println("4");
     }
 
+    public String getMarks(String name) {
+        return "Hello";
+    }
+
+  /*  public int getMarks(String name {
+        return 0;
+    }*/
+
+
+
     public static void main(String[] args) {
-        AbstractClassTest abstractClassTest = new AbstractClassTest();
+        Program abstractClassTest = new AbstractClassTest();
+        //abstractClassTest.disp1();
+        abstractClassTest.disp2();
     }
 
 }
-*/
+

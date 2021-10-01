@@ -1,17 +1,20 @@
 package org.santosh.scribble.corejava;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class Oops {
     Oops() {
-        this("1");
+        //this("1");
+        System.out.println("Super Oops");
     }
     Oops(String s) {
         System.out.println("super-"+s);
     }
     public void bark() {
         System.out.println("woof");
+    }
+
+    public static void main(String args[]) {
     }
 
     void say(List<String> list) {
@@ -21,6 +24,7 @@ public class Oops {
 
 class Child extends Oops {
     Child(String s) {
+        //super();
         System.out.println("sub-"+s);
     }
     void say (List list) {
@@ -31,19 +35,30 @@ class Child extends Oops {
     }
 
     public void bark() {
-        System.out.println("child howl");
-    }
-
-    public static void main(String[] args) {
-        new Child("4").go();
-        Child obj = new Child("2");
-        obj.say(new LinkedList<String>());
+        System.out.println("Child bark");
     }
 
     private void go() {
         new Child("1").bark();
+        //((Oops) new Child("2")).bark("");
         ((Oops) new Child("2")).bark();
-        //((Oops) new Child("3")).sniff();
+        Oops oops = new Child("3");
+        oops.bark();
     }
+
+    public static void main(String[] args) {
+        new Child("4").go();
+      /*  Child obj = new Child("2");
+        obj.say(new LinkedList<String>());*/
+        //((Oops) new Child("4")).sniff();
+        /*Oops oops = new Child("4");
+        ((Child) oops).sniff();*/
+    }
+
+    // If a constructor does not explicitly invoke a superclass constructor,
+    // the Java compiler automatically inserts a call to the no-argument constructor of the superclass.
+    // If the superclass does not have a no-argument constructor, you will get a compile-time error.
+    // Object class does have such a constructor, so if Object is the only superclass, there is no problem
+
 }
 

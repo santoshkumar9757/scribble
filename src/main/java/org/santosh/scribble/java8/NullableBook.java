@@ -14,6 +14,7 @@ public class NullableBook {
     public static void main(String[] args) {
         NullableBook book = new NullableBook(Optional.ofNullable(null));
         Optional<String> name = book.getBookName();
-        //name.ifPresent(System.out::println).orElse("Empty");
+        name.ifPresent(System.out::println);
+        System.out.println(name.isPresent());
     }
 }

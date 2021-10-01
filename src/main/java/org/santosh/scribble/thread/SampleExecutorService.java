@@ -15,7 +15,6 @@ public class SampleExecutorService {
         @Override
         public void run() {
             System.out.println("Completed");
-
         }
     }
 }

@@ -1,9 +1,9 @@
-package org.santosh.scribble.datastructures;
+package org.santosh.scribble.datastructures.linkedlist;
 
 public class SingleLinkedList {
     Node head;
 
-    static class Node {
+    class Node {
         int data;
         Node next;
 
@@ -13,7 +13,7 @@ public class SingleLinkedList {
         }
     }
 
-    public static SingleLinkedList insertNodeLast(SingleLinkedList linkedList, int data) {
+    public SingleLinkedList insertNodeLast(SingleLinkedList linkedList, int data) {
         Node lastNode = new Node(data);
 
         if (linkedList.head == null) {
@@ -29,7 +29,7 @@ public class SingleLinkedList {
         return linkedList;
     }
 
-    public static SingleLinkedList insertNodeFirst(SingleLinkedList linkedList, int data) {
+    public SingleLinkedList insertNodeFirst(SingleLinkedList linkedList, int data) {
         Node firstNode = new Node(data);
 
         if (linkedList.head == null) {
@@ -43,7 +43,7 @@ public class SingleLinkedList {
         return linkedList;
     }
 
-    public static SingleLinkedList insertBeforeKey(SingleLinkedList linkedList, int key, int data) {
+    public SingleLinkedList insertBeforeKey(SingleLinkedList linkedList, int key, int data) {
         Node newNode = new Node(data);
 
         if (linkedList.head == null) {
@@ -62,7 +62,7 @@ public class SingleLinkedList {
         return linkedList;
     }
 
-    private static SingleLinkedList insertAfterKey(SingleLinkedList linkedList, int key, int data) {
+    private SingleLinkedList insertAfterKey(SingleLinkedList linkedList, int key, int data) {
         Node newNode = new Node(data);
 
         if (linkedList.head == null) {
@@ -143,15 +143,15 @@ public class SingleLinkedList {
 
     public static void main(String[] args) {
         SingleLinkedList linkedList = new SingleLinkedList();
-        linkedList = insertNodeLast(linkedList, 10);
-        linkedList = insertNodeLast(linkedList, 20);
-        linkedList = insertNodeLast(linkedList, 30);
-        linkedList = insertBeforeKey(linkedList, 20, 15);
-        linkedList = insertAfterKey(linkedList, 20, 25);
+        linkedList = linkedList.insertNodeLast(linkedList, 10);
+        linkedList = linkedList.insertNodeLast(linkedList, 20);
+        linkedList = linkedList.insertNodeLast(linkedList, 30);
+        linkedList = linkedList.insertBeforeKey(linkedList, 20, 15);
+        linkedList = linkedList.insertAfterKey(linkedList, 20, 25);
         linkedList = deleteNodeByKey(linkedList, 30);
         //System.out.println("----After Deletion ---");
 
-        linkedList = insertNodeFirst(linkedList, 30);
+        linkedList = linkedList.insertNodeFirst(linkedList, 30);
         linkedList = deleteNodeByIndex(linkedList, 1);
     }
 

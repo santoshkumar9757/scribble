@@ -34,6 +34,7 @@ public class SampleTest {
             }
         }
         finally {
+            System.out.println(map.size());
             System.out.println("Finally");
         }
 

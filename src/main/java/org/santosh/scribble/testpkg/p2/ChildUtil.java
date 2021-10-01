@@ -11,9 +11,9 @@ public class ChildUtil extends Parent {
     }
 
     void callStuff() {
-        System.out.println("this"+ this.doStuff());
+        System.out.println("this "+ this.doStuff());
         Parent parent = new Parent();
-        System.out.println("Parent" + parent);
+        System.out.println("Parent " + parent.x);
 
         String s1 = "abc";
         String s2 = s1;
@@ -35,4 +35,7 @@ public class ChildUtil extends Parent {
         System.out.println(a2[0] + a2[1] + a2[2] + " ");
 
     }
+
+
+
 }

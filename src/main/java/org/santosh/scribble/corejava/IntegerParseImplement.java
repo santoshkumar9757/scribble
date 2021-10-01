@@ -1,11 +1,14 @@
 package org.santosh.scribble.corejava;
 
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 public class IntegerParseImplement {
     public static void main(String[] args) {
-        //getIntegerFromString("120", 10);
+        getIntegerFromString("120", 10);
         //findSubArrays();
         //missingNumber();
-        getMaxDifferenceInArray();
+        //getMaxDifferenceInArray();
     }
 
     private static void getIntegerFromString(String number, int radix) {
@@ -38,7 +41,7 @@ public class IntegerParseImplement {
             System.out.print(arr[k]);
         }
         System.out.println();
-       /* System.out.println(IntStream.range(i, j+1)
+        /*System.out.println(IntStream.range(i, j+1)
                 .mapToObj(k -> arr[k])
                 .collect(Collectors.toList()));*/
     }
@@ -77,6 +80,17 @@ public class IntegerParseImplement {
             System.out.println("Max difference: " + maxDifference);
         }
     }
+
+   private static void excelSheetColumn(int n) {
+       StringBuilder sb = new StringBuilder();
+       while (n > 0) {
+           n--;
+           int temp = n%26;
+           n /= 26;
+           sb.append((char) ('A' + temp));
+       }
+       System.out.println("Excel Sheet column name:" + sb.reverse().toString());
+   }
 }
 
 /*

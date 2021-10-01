@@ -12,6 +12,18 @@ public interface CustomFunctionalInterface {
         };
         System.out.println(customFunctionalInterface.printMyName("Santosh"));
     }*/
+
+}
+
+/*
+public class Student {
+    public int getMarks(String name)
+        return 0;
 }
 
 
+
+public class Kids extends Student {
+    public String getMarks(String name)
+        return "Hello";
+}*/

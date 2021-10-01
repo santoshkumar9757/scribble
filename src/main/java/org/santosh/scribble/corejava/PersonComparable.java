@@ -1,5 +1,6 @@
 package org.santosh.scribble.corejava;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -9,7 +10,7 @@ class PersonComparable implements Comparable<PersonComparable>{
         this.name = name;
     }
 
-  /*  @Override
+/*    @Override
     public int compareTo(Object o) {
         return 0;
     }*/
@@ -27,11 +28,13 @@ class Demo {
         PersonComparable p3 = new PersonComparable("DEF");
         PersonComparable p4 = new PersonComparable("ABC");
 
-        Set<PersonComparable> set = new TreeSet<PersonComparable>();
+        //Set<PersonComparable> set = new TreeSet();
+        Set<PersonComparable> set = new HashSet();
         set.add(p1);
         set.add(p2);
         set.add(p3);
-        set.add(p4);
+        //set.add(p4);
         System.out.println(set.size());
+        System.out.println(set);
     }
 }

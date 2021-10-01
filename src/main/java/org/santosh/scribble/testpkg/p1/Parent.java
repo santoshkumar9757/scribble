@@ -5,4 +5,5 @@ public class Parent {
     protected int doStuff () {
         return x;
     }
+
 }
