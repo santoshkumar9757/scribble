@@ -13,10 +13,10 @@ import java.util.stream.Collectors;
 
 public class HashMapSample {
     public static void main(String[] args) {
-        Map<WorDay, String> map = new HashMap<>();
-        map.put(new WorDay("mon"), "play");
-        map.put(new WorDay("mon"), "travel");
-        map.put(new WorDay("tuesday"), "fool");
+        Map<WorkDay, String> map = new HashMap<>();
+        map.put(new WorkDay("mon"), "play");
+        map.put(new WorkDay("mon"), "travel");
+        map.put(new WorkDay("tuesday"), "fool");
         System.out.println(map.size());
 
 /*        CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
@@ -37,18 +37,18 @@ public class HashMapSample {
         map.put("3", "Man");
 
         System.out.println(map.size());*/
-        List<WorDay> wordDays = new ArrayList();
-        wordDays.add(new WorDay("one", "Jan"));
-        wordDays.add(new WorDay("abc", "Feb"));
-        wordDays.add(new WorDay("san", "Jan"));
-        wordDays.add(new WorDay("man", "Apr"));
+        List<WorkDay> wordDays = new ArrayList();
+        wordDays.add(new WorkDay("one", "Jan"));
+        wordDays.add(new WorkDay("abc", "Feb"));
+        wordDays.add(new WorkDay("san", "Jan"));
+        wordDays.add(new WorkDay("man", "Apr"));
 
         Map<String, List<String>> hm = wordDays.stream().collect(
-                                                            Collectors.groupingBy(WorDay::getMonth,
-                                                                    Collectors.mapping(WorDay::getDay, Collectors.toList())));
+                                                            Collectors.groupingBy(WorkDay::getMonth,
+                                                                    Collectors.mapping(WorkDay::getDay, Collectors.toList())));
         System.out.println(hm);
-        Map<String, List<WorDay>> hm1 = wordDays.stream().collect(
-                Collectors.groupingBy(WorDay::getMonth));
+        Map<String, List<WorkDay>> hm1 = wordDays.stream().collect(
+                Collectors.groupingBy(WorkDay::getMonth));
 
         System.out.println(hm1);
 
@@ -64,18 +64,25 @@ public class HashMapSample {
 @Setter
 @Getter
 @AllArgsConstructor
-class WorDay {
+class WorkDay {
      String day;
      String month;
 
-     WorDay(String day) {
+     WorkDay(String day) {
          this.day = day;
      }
 
 
      @Override
      public boolean equals (Object o) {
-         return ((WorDay) o).day == this.day;
+        if (this == o) {
+            return true;
+        }
+        if (o instanceof WorkDay) {
+            WorkDay workDay = (WorkDay) o ;
+            return workDay.day.equals(this.day);
+        }
+         return false;
      }
 
      // calculate ASCII value of string
@@ -97,10 +104,10 @@ class WorDay {
         return sb.toString();
     }
 
-    static class WordDaySorter implements Comparator<WorDay> {
+    static class WordDaySorter implements Comparator<WorkDay> {
 
         @Override
-        public int compare(WorDay o1, WorDay o2) {
+        public int compare(WorkDay o1, WorkDay o2) {
            return o1.getDay().compareTo(o2.getDay());
         }
     }

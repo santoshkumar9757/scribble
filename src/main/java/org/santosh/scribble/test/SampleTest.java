@@ -13,6 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import org.apache.logging.log4j.Logger;
 
@@ -68,8 +69,9 @@ public class SampleTest {
         log.debug("Pairs: {}", pairs1); 
         migratoryBirds(birdList);
 
-        // Get first occuring unique character from a given string    
+        // Get first occurring unique character from a given string
         String a = "acvabv";
+
         Set<Character> uniqueCharacters = new LinkedHashSet<>();
 
         for (int i = 0; i < a.length(); i++) {

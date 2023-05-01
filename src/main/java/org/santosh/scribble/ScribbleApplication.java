@@ -1,6 +1,5 @@
 package org.santosh.scribble;
 
-import org.santosh.scribble.spring.BeanLifeCycleA;
 import org.santosh.scribble.spring.BeanLifeCycleB;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

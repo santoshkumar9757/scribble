@@ -6,7 +6,7 @@ abstract class Program {
     }
     abstract public void disp2();
     abstract void disp3();
-    abstract protected  void disp4();
+    protected abstract void disp4();
 }
 
 public class AbstractClassTest extends Program{

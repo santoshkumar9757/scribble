@@ -73,14 +73,25 @@ public class TreeTraversals {
         preOrder(root);
         System.out.print("\nPost Order ==> ");
         postOrder(root);
-        System.out.print("\nIn Order ==> \n");
+        System.out.print("\nIn Order ==> ");
         inOrder(root);
-        System.out.println("Is BST=>" +isBST(root, null, null));
+        System.out.println();
+        System.out.print("Is BST=>" +isBST(root, null, null));
 
         System.out.println();
-        System.out.println("Height of the tree is ->"+ height(root));
+        System.out.print("Height of the tree is ->"+ height(root));
     }
 
 }
 
+class Node {
+    int data;
+    Node left;
+    Node right;
+
+    Node (int key) {
+        data = key;
+        left = right = null;
+    }
+}
 

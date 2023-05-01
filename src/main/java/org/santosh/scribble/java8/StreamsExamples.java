@@ -7,8 +7,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class StreamsExamples {
@@ -28,10 +30,11 @@ public class StreamsExamples {
         list.add(employee4);
         list.add(employee5);
 
-        // Collection of employees if employee id is 2 then update his salary in same list
-        Optional<Employee> em = list.stream().filter(employee -> employee.getId() == 2).peek(employee -> employee.setSalary(500)).findFirst();
-        System.out.println(em.map(Employee :: getSalary));
-        System.out.println("===");
+        Map<Integer, Integer> empMap = list.stream().
+                filter(employee -> employee.getSalary() > 300).
+                collect(Collectors.toMap(Employee::getId, Employee::getSalary));
+
+        System.out.println("====> employee Map" + empMap);
 
         // reduce() allows us to produce one single result from a sequence of elements
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
@@ -39,6 +42,10 @@ public class StreamsExamples {
         //int result = numbers.stream().reduce(0, Integer::sum);
         System.out.println("Sum is ->" + result);
         System.out.println("===");
+
+        List<Integer> duplicateAndNullElements = Arrays.asList(1, 2, 2, 4, 4, null, 5, 6);
+        Set<Integer> uniqueSet = duplicateAndNullElements.stream().filter(Objects::nonNull).collect(Collectors.toSet());
+        System.out.println("UniqueSet ==>" + uniqueSet);
 
         List<String> letters = Arrays.asList("a", "b", "c", "d", "e");
         System.out.println(letters.stream().reduce("", (partialString, element) -> partialString + element));

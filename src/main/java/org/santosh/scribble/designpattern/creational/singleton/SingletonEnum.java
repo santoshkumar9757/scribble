@@ -1,4 +1,4 @@
-package org.santosh.scribble.designpattern.creational;
+package org.santosh.scribble.designpattern.creational.singleton;
 
 public enum SingletonEnum {
     INSTANCE;
@@ -19,7 +19,9 @@ public enum SingletonEnum {
 class EnumDemo {
     public static void main(String[] args) {
         SingletonEnum singletonEnum = SingletonEnum.INSTANCE;
-        singletonEnum.setValue(1);
+
+        System.out.println(singletonEnum.getValue());
+        singletonEnum.setValue(2);
         System.out.println(singletonEnum.getValue());
     }
 }

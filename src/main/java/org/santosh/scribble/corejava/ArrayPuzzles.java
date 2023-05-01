@@ -9,7 +9,7 @@ public class ArrayPuzzles {
     public static void main(String[] args) {
         int a[] = {-1, -2, -3, -4, -5, -6};
         int n = a.length;
-        //createSubArrays(a, n);
+        createSubArrays(a, n);
         //reverseArray(a);
         Integer i = 10;
         Integer j = 20;
