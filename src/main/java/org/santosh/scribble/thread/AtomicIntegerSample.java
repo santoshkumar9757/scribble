@@ -5,12 +5,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class AtomicIntegerSample {
     private static AtomicInteger counter = new AtomicInteger(0);
     static class Decrement extends Thread {
+        @Override
         public void run() {
             counter.decrementAndGet();
         }
     }
 
     static class Increment extends Thread {
+        @Override
         public void run () {
             counter.incrementAndGet();
         }

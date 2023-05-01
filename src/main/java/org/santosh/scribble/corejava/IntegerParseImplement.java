@@ -1,14 +1,12 @@
 package org.santosh.scribble.corejava;
 
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 public class IntegerParseImplement {
     public static void main(String[] args) {
-        getIntegerFromString("120", 10);
+        //getIntegerFromString("120", 10);
         //findSubArrays();
         //missingNumber();
         //getMaxDifferenceInArray();
+        excelSheetColumn(34);
     }
 
     private static void getIntegerFromString(String number, int radix) {
@@ -81,16 +79,16 @@ public class IntegerParseImplement {
         }
     }
 
-   private static void excelSheetColumn(int n) {
-       StringBuilder sb = new StringBuilder();
-       while (n > 0) {
-           n--;
-           int temp = n%26;
-           n /= 26;
-           sb.append((char) ('A' + temp));
-       }
-       System.out.println("Excel Sheet column name:" + sb.reverse().toString());
-   }
+    private static void excelSheetColumn(int n) {
+        StringBuilder sb = new StringBuilder();
+        while (n > 0) {
+            n--;
+            int temp = n % 26;
+            n /= 26;
+            sb.append((char) ('A' + temp));
+        }
+        System.out.println("Excel Sheet column name:" + sb.reverse().toString());
+    }
 }
 
 /*
@@ -108,7 +106,7 @@ Q : Implement functionality similar to Integer.parseInt(String number) and Integ
 Q:Find subarrays with given sum in an array.
         Input-
         int[] arr = {2, 3, 6, 4, 9, 0, 11};
-        int num = 9
+        int sum = 9
         Output-
         {3, 6}
         {9},

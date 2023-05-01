@@ -24,7 +24,6 @@ public class Oops {
 
 class Child extends Oops {
     Child(String s) {
-        //super();
         System.out.println("sub-"+s);
     }
     void say (List list) {

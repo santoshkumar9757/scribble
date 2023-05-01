@@ -65,7 +65,7 @@ public class CollectionSample {
 
         Map<String, String> mh = new HashMap<>();
         mh.put("Santosh", "1st Object");
-        mh.put(new String("Santosh"), "2st Object");
+        mh.put(new String("Santosh"), "2nd Object");
 
         System.out.println("String HashMap size:"+ mh.size());
 

@@ -7,9 +7,9 @@ public class Generics<T> {
     }
 
     public static void main(String[] args) {
-        Generics<Number> gen = new Generics<>();
-        gen.add(new Integer(1));
-        gen.add(new Double(1.0));
+        Generics<String> gen = new Generics<>();
+        gen.add("Santosh");
+        gen.add("Shiva");
     }
 
 }

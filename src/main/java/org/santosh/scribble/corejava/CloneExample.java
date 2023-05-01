@@ -17,28 +17,28 @@ public class CloneExample {
 
     static class Employee implements Cloneable{
 
-        private int empoyeeId;
+        private int employeeId;
         private String employeeName;
         private Department department;
 
         public Employee(int id, String name, Department dept) {
-            this.empoyeeId = id;
+            this.employeeId = id;
             this.employeeName = name;
             this.department = dept;
         }
         @Override
         protected Object clone() throws CloneNotSupportedException {
             Employee cloned = (Employee)super.clone();
-            cloned.setDepartment((Department)cloned.getDepartment().clone()); // deep copy
+            cloned.setDepartment((Department) cloned.getDepartment().clone()); // deep copy
             return cloned;
         }
 
-        public int getEmpoyeeId() {
-            return empoyeeId;
+        public int getEmployeeId() {
+            return employeeId;
         }
 
-        public void setEmpoyeeId(int empoyeeId) {
-            this.empoyeeId = empoyeeId;
+        public void setEmployeeId(int employeeId) {
+            this.employeeId = employeeId;
         }
 
         public String getEmployeeName() {
