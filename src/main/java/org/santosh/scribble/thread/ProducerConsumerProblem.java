@@ -47,7 +47,7 @@ public class ProducerConsumerProblem {
                     //flag = true;
                     list.add(value++);
                     notify();
-                    // makes the working of program easier to  understand
+                    // makes the working of program easier to understand
                     Thread.sleep(1000);
                 }
             }
@@ -56,7 +56,7 @@ public class ProducerConsumerProblem {
         public void removeItems() throws InterruptedException {
             synchronized (this) {
                 for (int i = 0; i < capacity; i++) {
-                    while (list.size() == 0) {
+                    while (list.isEmpty()) {
                     /*while (!flag) {*/
                         wait();
                         // System.out.println("List is empty");
