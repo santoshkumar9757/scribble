@@ -52,6 +52,9 @@ public class HashMapSample {
 
         System.out.println(hm1);
 
+       for (WorkDay day : wordDays) {
+           hm1.computeIfAbsent("xyz", k -> new ArrayList<>()).add(day);
+       }
 
     }
 
